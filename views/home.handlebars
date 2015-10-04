@@ -1,8 +1,25 @@
-<div class="jumbotron">
-    <h1>Bedrock <small>A minimalist boilerplate for Express apps</small></h1>
-    <p>
-        Bedrock has been set up successfully. You can now customize this app to your needs. To learn how to do this, you should read <a href="http://tilomitra.github.io/bedrock/">Bedrock's Documentation.
-    </p>
-        <a class="btn pure-button" href="http://tilomitra.github.io/bedrock/" role="button">View Bedrock's Documentation &raquo;</a>
-    </p>
+<div class="row">
+	<form method="get" action="/">
+    <div class="large-12 columns">
+      <div class="row collapse">
+        <div class="small-9 columns">
+          <input type="text" name="word" placeholder="Word" value="{{wordQuery}}">
+        </div>
+        <div class="small-1 columns">
+          <input type="text" name="lang" class="postfix" placeholder="language" value="{{langQuery}}">
+        </div>
+        <div class="small-2 columns">
+          <input type="submit" value="Go" class="button postfix"></input>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="row">
+
+{{#if wordQuery}}
+<h1>{{wordQuery}}</h1>
+
+{{/if}}
 </div>

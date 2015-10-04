@@ -105,7 +105,9 @@ function setupServer (worker) {
 
     // The exposeTemplates() method makes the Handlebars templates that are inside /shared/templates/
     // available to the client.
-    router.get('/', [ middleware.exposeTemplates(), routes.render('home') ]);
+    router.get('/', [ middleware.exposeTemplates(), routes.renderHome ]);
+    router.get('/:word', [ middleware.exposeTemplates(), routes.renderHome ]);
+    router.get('/:word/:lang', [ middleware.exposeTemplates(), routes.renderHome ]);
 
     // Error handling middleware
     app.use(function(req, res, next){
