@@ -1,0 +1,27 @@
+
+
+
+<dl class="accordion" data-accordion>
+  <dd class="accordion-navigation">
+    <a href="#wordSectionJSON">JSON</a>
+    <div id="wordSectionJSON" class="content">
+      <pre>
+			{{{prettyPrintJson word}}}
+			</pre>
+    </div>
+  </dd>
+  <dd class="accordion-navigation">
+    <a href="#wordSectionGenerated">Generated Article</a>
+    <div id="wordSectionGenerated" class="content active">
+
+    {{> wordRender}}
+
+    </div>
+  </dd>
+  <dd class="accordion-navigation">
+    <a href="#wordSectionWiktionary">Wiktionary Source</a>
+    <div id="wordSectionWiktionary" class="content">
+      {{{wordHTMLWiktionary}}}
+    </div>
+  </dd>
+</dl>

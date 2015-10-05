@@ -18,8 +18,12 @@
 
 <div class="row">
 
-{{#if wordQuery}}
-<h1>{{wordQuery}}</h1>
-
+{{#if error}}
+<div class="alert-box alert">
+{{error}}
+</div>
 {{/if}}
+
+{{> word }}
+
 </div>
