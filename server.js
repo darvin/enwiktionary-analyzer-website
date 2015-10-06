@@ -117,7 +117,8 @@ function setupServer (worker) {
     app.use(function(err, req, res, next){
         res.render('500', {
             status: err.status || 500,
-            error: err
+            error: err,
+            stack: err.stack
         });
     });
 

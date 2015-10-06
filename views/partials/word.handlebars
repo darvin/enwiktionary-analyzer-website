@@ -1,27 +1,27 @@
 
 
+<div class="row">
+  <div class="large-6 columns">
+  	<em>generated for {{renderWordLinkTitle word.word}} </em>
 
-<dl class="accordion" data-accordion>
-  <dd class="accordion-navigation">
-    <a href="#wordSectionJSON">JSON</a>
-    <div id="wordSectionJSON" class="content">
-      <pre>
-			{{{prettyPrintJson word}}}
-			</pre>
-    </div>
-  </dd>
-  <dd class="accordion-navigation">
-    <a href="#wordSectionGenerated">Generated Article</a>
-    <div id="wordSectionGenerated" class="content active">
+		{{> wordRender}}
 
-    {{> wordRender}}
+		<dl class="accordion" data-accordion>
+		  <dd class="accordion-navigation">
+		    <a href="#wordSectionJSON">JSON</a>
+		    <div id="wordSectionJSON" class="content">
+		      <pre>
+					{{{prettyPrintJson word}}}
+					</pre>
+		    </div>
+		  </dd>
+		</dl>
+	</div>
 
-    </div>
-  </dd>
-  <dd class="accordion-navigation">
-    <a href="#wordSectionWiktionary">Wiktionary Source</a>
-    <div id="wordSectionWiktionary" class="content">
-      {{{wordHTMLWiktionary}}}
-    </div>
-  </dd>
-</dl>
+  <div class="large-6 columns">
+    	<em>fetched for {{renderWordLinkTitle word.word}} </em>
+
+        {{{wordHTMLWiktionary}}}
+	</div>
+</div>
+
