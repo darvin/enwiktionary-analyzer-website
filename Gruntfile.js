@@ -52,10 +52,11 @@ module.exports = function(grunt) {
     webfont: {
       icons: {
           src: 'build/images/*.svg',
-          dest: 'build/fonts',
-          destCss: 'build/fonts/css',
+          dest: 'public/',
+          destCss: 'public/css',
           options: {
-              font: 'ponies'
+              font: 'languageIcons',
+              engine: 'node'
           }
       }
     }
