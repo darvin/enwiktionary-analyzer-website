@@ -3,6 +3,9 @@
   "description": "Wiktionary analyzer",
   "author": "Sergey Klimov <sergey.v.klimov@gmail.com>",
   "version": "0.0.1",
+  "scripts": {
+    "test" : "node_modules/.bin/mocha test"
+  },
   "dependencies": {
     "body-parser": "^1.6.3",
     "compression": "^1.4.0",
@@ -23,6 +26,7 @@
   },
   "devDependencies": {
     "async": "^1.4.2",
+    "chai": "^3.3.0",
     "grunt": "~0.4.0rc2",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.11.3",
@@ -35,7 +39,7 @@
     "mocha": "*",
     "raphael": "^2.1.4",
     "should": "*",
-    "vows": "0.5.x"
+    "supertest": "^1.1.0"
   },
   "engine": "node >= 0.10.x"
 }

@@ -63,10 +63,10 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('build-webfont', ['svgs-for-languages', 'webfont']);
+  // grunt.registerTask('build-webfont', ['svgs-for-languages', 'webfont']);
 
-  grunt.registerTask('build', ['build-webfont']);
+  grunt.registerTask('build', []);
 
-  grunt.registerTask('default', ['build', 'mochaTest', 'jshint']);
+  grunt.registerTask('default', ['build', 'mochaTest']);
 
 };

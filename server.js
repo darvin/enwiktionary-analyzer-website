@@ -6,7 +6,6 @@ csrf         = require('csurf'),
 session      = require('express-session'),
 state        = require('express-state'),
 flash        = require('express-flash'),
-cluster      = require('express-cluster'),
 compression  = require('compression'),
 hbs          = require('./lib/exphbs'),
 routes       = require('./routes'),
@@ -16,19 +15,12 @@ utils        = require('./lib/utils'),
 port         = (process.env.PORT || 8000);
 
 
-//Comment out the line below if you want to enable cluster support.
-setupServer();
-
-//Uncomment the line below if you want to enable cluster support.
-//cluster(setupServer);
 
 
-function setupServer (worker) {
-    var app = express(),
-        server = app.listen(port, function () {
-            console.log("Bedrock App is now listening on port " + server.address().port);
-        }),
-        router;
+
+function createApp () {
+    var app = express();
+    var router;
 
     //Setup Express App
     state.extend(app);
@@ -111,17 +103,34 @@ function setupServer (worker) {
 
     // Error handling middleware
     app.use(function(req, res, next){
-        res.render('404', { status: 404, url: req.url });
+      res.status(404);
+
+      res.render('404', { status: 404, url: req.url });
     });
 
     app.use(function(err, req, res, next){
-        res.render('500', {
-            status: err.status || 500,
-            error: err,
-            stack: err.stack
-        });
+      res.status(500);
+      res.render('500', {
+        status: err.status || 500,
+        error: err,
+        stack: err.stack
+      });
     });
 
-    return server;
+    return app;
+}
+
+
+module.exports = createApp;
+
+
+var main = function(){
+  server = createApp().listen(port, function () {
+    console.log("Bedrock App is now listening on port " + server.address().port);
+  })
+}
+
+if (require.main === module) {
+  main();
 }
 
