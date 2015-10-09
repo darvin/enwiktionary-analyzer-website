@@ -48,6 +48,36 @@
 {{#each roles}}
 <h2>{{canonicalRoleName role}}</h2>	
 
+
+{{#with explanations}}
+<ol>
+{{#each this}}
+	<li>
+		{{#with context}} <em>({{this}})</em>{{/with}}
+
+		{{#eachExplanationSegment this}}
+			{{#if mentionedWord}}
+				{{> wordLink mentionedWord}}
+			{{else}}
+				{{text}}
+			{{/if}}
+		{{/eachExplanationSegment}}
+
+		{{#with usages}}
+		<dt>
+		{{#each this}}
+			<dd>
+				<blockquote>{{usage}}</blockquote>
+			</dd>
+		{{/each}}
+		</dt>
+		{{/with}}
+	</li>
+{{/each}}
+</ol>
+
+{{/with}}
+
 {{#with synonyms}}
 <h3>Synonyms</h3>
 {{> wordLinkListRender}}
