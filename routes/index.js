@@ -36,11 +36,11 @@ function renderHome(req, res) {
 	if (word && lang) {
 		wikt.api.fetchArticleForLanguageHtml(word, lang, function(err, articleWiktHtml) {
 			if (err) 
-				return finish("Not Found");
+				return finish("HTML Wiki Article Not Found");
 
-			wikt.api.fetchArticle(word, function(err, article) {
+			wikt.api.fetchArticle(wikt.api.getArticleName(word, lang), function(err, article) {
 				if (err) 
-					return finish("Not Found");
+					return finish("WikiText Article Not Found");
 				wikt.analyzer.parseArticle(word, article, function(err, parsedWord){
 					if (err)
 						return finish("Problem With Parsing");
