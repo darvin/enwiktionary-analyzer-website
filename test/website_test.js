@@ -4,7 +4,7 @@ chai.should();
 var expect = chai.expect;
 var app = require('../server')();
 describe('Website showing "test" in English', function(){
-	this.timeout(4000);
+	this.timeout(6000);
 	var word="test";
 	var lang="en";
 	it('should be fine at GET /?word=:word&lang=:lang', function(done) {
