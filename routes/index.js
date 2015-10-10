@@ -52,6 +52,8 @@ function renderHome(req, res) {
 			});
 
 		})
+	} else {
+		finish(null);
 	}
 	
 }

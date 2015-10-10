@@ -126,7 +126,7 @@ module.exports = createApp;
 
 var main = function(){
   server = createApp().listen(port, function () {
-    console.log("Bedrock App is now listening on port " + server.address().port);
+    console.log("EnWiktionary Analyzer Website App is now listening on port " + server.address().port);
   })
 }
 
