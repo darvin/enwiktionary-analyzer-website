@@ -34,7 +34,6 @@
     "grunt-mocha": "^0.4.13",
     "grunt-mocha-test": "^0.12.7",
     "grunt-webfont": "^0.5.4",
-    "jsdom": "^3.1.2",
     "mkdirp": "^0.5.1",
     "mocha": "*",
     "raphael": "^2.1.4",
